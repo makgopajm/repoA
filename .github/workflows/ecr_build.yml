@@ -3,6 +3,9 @@ name: Main Infra → Code Workflow
 on:
   workflow_dispatch:
 
+env:
+  token:  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
+
 jobs:
   setup-ecr:
     runs-on: ubuntu-latest
@@ -19,6 +22,6 @@ jobs:
       - name: Trigger Docker Image Build (Repo B)
         uses: peter-evans/repository-dispatch@v2
         with:
-          token: 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
+          token: ${{env.token}}
           repository: makgopajm/repB
           event-type: build-lambda-images
