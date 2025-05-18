@@ -6,6 +6,7 @@ on:
 jobs:
   setup-ecr:
     runs-on: ubuntu-latest
+    environment: Test
     name: Step 1 - Create ECR repos
 
     steps:
