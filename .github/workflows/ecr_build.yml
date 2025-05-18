@@ -6,7 +6,7 @@ on:
 jobs:
   setup-ecr:
     env:
-      token: "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"
+      token: ${{secrets.TOKEN}}
     runs-on: ubuntu-latest
     name: Step 1 - Create ECR repos
 
