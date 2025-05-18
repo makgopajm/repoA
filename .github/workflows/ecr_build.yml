@@ -5,8 +5,6 @@ on:
 
 jobs:
   setup-ecr:
-    env:
-      token: ${{secrets.TOKEN}}
     runs-on: ubuntu-latest
     name: Step 1 - Create ECR repos
 
@@ -21,6 +19,6 @@ jobs:
       - name: Trigger Docker Image Build (Repo B)
         uses: peter-evans/repository-dispatch@v2
         with:
-          token: ${{env.token}}
+          token: ${{ secrets.TOKEN }}  # Pass the token directly here
           repository: makgopajm/repB
           event-type: build-lambda-images
