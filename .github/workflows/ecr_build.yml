@@ -3,11 +3,10 @@ name: Main Infra → Code Workflow
 on:
   workflow_dispatch:
 
-env:
-  token:  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
-
 jobs:
   setup-ecr:
+    env:
+      token: "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"
     runs-on: ubuntu-latest
     name: Step 1 - Create ECR repos
 
